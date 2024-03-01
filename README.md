@@ -1,5 +1,5 @@
-# Offline Website Viewer
-It is a small tool for viewing local websites based on Chromium (using CefSharp). It can view both static html files with CSS and JS in a simple folder and packed files in .zip archive. Also this tool provides search indexing for all .html and .htm files based on `<title>` tag. Works perfectly with Wget or HTTrack website dumps. So you can grab entire website, pack it into zip and view it using this tool and even search for separate pages.
+# Offline Website Browser
+It is a small tool for viewing local websites based on Chromium (using CefSharp). It can view both static html files with CSS and JS in a simple folder and packed files in .zip archive. Also this tool provides search indexing for all .html and .htm files based on `<title>` tag. Works perfectly with zipped html files and zip files that contain the downloaded offline website. So you can grab entire website, pack it into zip and view it using this tool and even search for separate pages.
 
 This tool was created as a replacement for ZIM archives for grabbing wikimedia-based websites. ZIM archive creation pipeline doesn't seem robust to me so i decided to make this tool. It's more transparent to developer than ZIM.
 
@@ -21,6 +21,9 @@ Currently supported languages:
 
 - English
 - Russian
+- French
+- German
+- Spanish 
 
 You can create your own localizations by creating your own `Resources.Language.<your lang code>.resx` files. See default [Language.resx](https://github.com/bshishov/OfflineWebsiteViewer/blob/master/src/OfflineWebsiteViewer/Resources/Language.ru.resx) file for reference (better open it in Visual Studio).
 
@@ -44,7 +47,7 @@ Requirements for development:
 
 Let's assume that you want to create a redistributable offline copy of a website.
 
- 1. Download the website using Wget or HTTrack.
+ 1. Download the website using a downloader app or browser download manager app.
  2. Open the output directory of the dump. Make sure that `index.html` is there. If it's not - create it.
  3. Open the Offline Website Viewer click "Open Folder" and select folder of the dump.
  4. Create search index by clicking the command in Main Menu. (this may take a while).
@@ -64,7 +67,7 @@ The project was built in Visual Studio 2015. Just clone the project and build it
 
 There are 3 projects in the solution:
 
-- **OfflineWebsiteViewer**. The application itself. If you will build it it will generate executables and dlls for x86 or x64 platform in `/bin` folder.
+- **OfflineWebsiteBrowser**. The application itself. If you will build it it will generate executables and dlls for x86 or x64 platform in `/bin` folder.
 -  **Installer**. WIX Installer project for the application. It will generate an `.msi` package for the application. It includes installation to Program Files directory and all shortcut defenitions and file mappings. Note that it doesn't include any UI and requirement packages. It is configured to build only `x86 Release` version of application but you can change it manually.
 - **InstallBootstrapper**. This is WIX bootstrapper project. It references installer's `.msi` package and requirements and builds into ready for user 'installer.exe'.
 
