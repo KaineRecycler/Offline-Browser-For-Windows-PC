@@ -1,5 +1,8 @@
 # Offline Website Browser
-It is a small tool for viewing local websites based on Chromium (using CefSharp). It can view both static html files with CSS and JS in a simple folder and packed files in .zip archive. Also this tool provides search indexing for all .html and .htm files based on `<title>` tag. Works perfectly with zipped html files and zip files that contain the downloaded offline website. So you can grab entire website, pack it into zip and view it using this tool and even search for separate pages.
+It is a small tool for viewing local websites based on Chromium (using CefSharp). It can view both static html files with CSS and JS in a simple folder and packed files in .zip archive. Also this tool provides search indexing for all .html and .htm files based on `<title>` tag. Works perfectly with zipped html files and zip files that contain the downloaded offline website. So you can grab entire website, pack it into zip and view it using this tool and even search for separate pages and search and interact within pages.
+
+this offline browser also has a built in browsing history section and a new feature which allows you to download the entire browsing history activity and puts them into a WACZ format so that later you can easily browse it again using webrecorders replayweb.page tool.
+
 
 This tool was created as a replacement for ZIM archives for grabbing wikimedia-based websites. ZIM archive creation pipeline doesn't seem robust to me so i decided to make this tool. It's more transparent to developer than ZIM.
 
